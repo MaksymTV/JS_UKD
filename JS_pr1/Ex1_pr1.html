@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr.1</title>
+</head>
+<body>
+    <script>
+
+        let Pi = 3.14159;
+        let E = 2.71828;
+        
+        const a = prompt('Введіть значення a:');
+        const b = prompt('Введіть значення b:');
+
+        let denominator = 2 * Math.cbrt(Pi + ((a / E) **2));
+        let numerator = (b - (15.38 / ((7.94 + E) ** Math.sqrt(a))));
+
+        let result = denominator / numerator;
+
+        alert("Результат: " + result);
+    </script>
+</body>
+</html>

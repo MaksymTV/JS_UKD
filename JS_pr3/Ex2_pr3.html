@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr.3</title>
+</head>
+<body>
+    <script>
+        let добуток = 1;
+        while (true) {
+        let введення = prompt("Введіть число або 'end' для завершення:");
+
+        if (введення === "end") {
+        break;
+        } else {
+
+        let число = parseFloat(введення);
+        if (!isNaN(число)) {
+            добуток *= число;
+        } else {
+            alert("Будь ласка, введіть дійсне число або 'end' для завершення.");
+        }
+        }
+    }
+    </script>
+</body>
+</html>
