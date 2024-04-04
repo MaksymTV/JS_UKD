@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function equals(a, b) {
+        if (typeof a !== typeof b) {
+        return "Variables a and b have different types";
+        } else if (a > b) {
+        return "a > b";
+        } else if (a < b) {
+        return "a < b";
+        } else {
+        return "a = b";
+        }
+        }
+
+        // Виклики функції з різними аргументами
+        console.log(equals(5, 3)); // a > b
+        console.log(equals(2, 7)); // a < b
+        console.log(equals(4, 4)); // a = b
+        console.log(equals(3, '3')); // Variables a and b have different types
+        console.log(equals(true, 0)); // Variables a and b have different types
+
+    </script>
+</body>
+</html>
