@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isNumberPrime(number, divisor = 2) {
+    // Базовий випадок: якщо число менше або дорівнює 2, воно є простим
+        if (number <= 2) {
+            return number === 2;
+        } 
+    // Базовий випадок: якщо число кратне будь-якому числу крім 1 і самого себе, воно не є простим
+        else if (number % divisor === 0) {
+            return false;
+        } 
+    // Рекурсивний випадок: перевіряємо подільники від 2 до кореня числа
+        else if (divisor * divisor > number) {
+            return true;
+        } else {
+            return isNumberPrime(number, divisor + 1);
+        }
+    }
+
+    // Приклади виклику функції
+    console.log(isNumberPrime(17)); // Повинно вивести: true
+    console.log(isNumberPrime(18)); // Повинно вивести: false
+    </script>
+</body>
+</html>

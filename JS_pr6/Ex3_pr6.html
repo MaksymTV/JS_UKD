@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Rectangle(width, height) {
+            this.width = width;
+            this.height = height;
+    
+            this.perimeter = function() {
+                return 2 * (this.width + this.height);
+        };
+    
+        this.area = function() {
+            return this.width * this.height;
+        };
+    }
+
+    // Створення трьох об'єктів типу Rectangle
+    const rectangle1 = new Rectangle(4, 5);
+    const rectangle2 = new Rectangle(3, 7);
+    const rectangle3 = new Rectangle(6, 8);
+
+    // Виведення значень периметрів та площ для кожного об'єкта
+    console.log("Периметр та площа для прямокутника 1:");
+    console.log("Периметр:", rectangle1.perimeter());
+    console.log("Площа:", rectangle1.area());
+
+    console.log("Периметр та площа для прямокутника 2:");
+    console.log("Периметр:", rectangle2.perimeter());
+    console.log("Площа:", rectangle2.area());
+
+    console.log("Периметр та площа для прямокутника 3:");
+    console.log("Периметр:", rectangle3.perimeter());
+    console.log("Площа:", rectangle3.area());
+    </script>
+</body>
+</html>

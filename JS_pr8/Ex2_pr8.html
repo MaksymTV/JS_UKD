@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName, birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+    }
+
+    const person1 = new Person("John", "Doe", new Date("1990-05-15"));
+    const person2 = new Person("Alice", "Smith", new Date("1985-10-20"));
+    const person3 = new Person("Bob", "Johnson", new Date("1978-03-12"));
+
+    const persons = [person1, person2, person3];
+
+    // Виведення інформації про кожну особу за допомогою методу forEach
+    persons.forEach(person => {
+        console.log(`Ім'я: ${person.firstName}, Прізвище: ${person.lastName}, Дата народження: ${person.birthday}`);
+    });
+
+    // Сортування за ім'ям, якщо імена співпадають, то за прізвищем
+    persons.sort((a, b) => {
+        if (a.firstName === b.firstName) {
+            return a.lastName.localeCompare(b.lastName);
+        }
+        return a.firstName.localeCompare(b.firstName);
+    });
+
+    // Виведення інформації про кожну особу за допомогою циклу for..of
+    for (const person of persons) {
+        console.log(`Ім'я: ${person.firstName}, Прізвище: ${person.lastName}, Дата народження: ${person.birthday}`);
+    }
+    </script>
+</body>
+</html>

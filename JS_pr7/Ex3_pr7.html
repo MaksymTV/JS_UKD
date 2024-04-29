@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getMax(array, index = 0, max = -Infinity) {
+    // Базовий випадок: якщо індекс досягнув кінця масиву, повертаємо максимальний елемент
+        if (index === array.length) {
+            return max;
+        } 
+    // Перевіряємо, чи поточний елемент більший за поточне максимальне значення
+        else if (array[index] > max) {
+            return getMax(array, index + 1, array[index]);
+        } else {
+            return getMax(array, index + 1, max);
+        }
+    }
+
+    function getMin(array, index = 0, min = Infinity) {
+    // Базовий випадок: якщо індекс досягнув кінця масиву, повертаємо мінімальний елемент
+        if (index === array.length) {
+            return min;
+        } 
+    // Перевіряємо, чи поточний елемент менший за поточне мінімальне значення
+        else if (array[index] < min) {
+            return getMin(array, index + 1, array[index]);
+        } else {
+            return getMin(array, index + 1, min);
+        }
+    }
+
+    // Приклад використання
+    const array = [6, 4, 7, 3, 8, 1, 5, 2, 9, 7, 2, 4, 1, 5, 7];
+    console.log("Максимальний елемент:", getMax(array)); // Виведе: 9
+    console.log("Мінімальний елемент:", getMin(array)); // Виведе: 1
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName, birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+    }
+
+    function Community(...people) {
+        this.people = people;
+
+        // Реалізація ітератора для об'єктів типу Person
+        this[Symbol.iterator] = function() {
+            let index = 0;
+            const people = this.people;
+
+            return {
+                next() {
+                    if (index < people.length) {
+                        return { value: people[index++], done: false };
+                    } else {
+                        return { done: true };
+                    }
+                }
+            };
+        };
+    }
+
+    const person1 = new Person("John", "Doe", new Date("1990-05-15"));
+    const person2 = new Person("Alice", "Smith", new Date("1985-10-20"));
+    const person3 = new Person("Bob", "Johnson", new Date("1978-03-12"));
+
+    const community = new Community(person1, person2, person3);
+
+    // Виведення інформації про кожну особу з використанням ітератора
+    for (const person of community) {
+        console.log(`Ім'я: ${person.firstName}, Прізвище: ${person.lastName}, Дата народження: ${person.birthday}`);
+    }
+    </script>
+</body>
+</html>

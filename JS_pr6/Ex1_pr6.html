@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function execute(callbackfn) {
+        return callbackfn();
+    }
+
+    // Функція додавання
+        function add(a, b) {
+        return a + b;
+    }   
+
+    // Виклик функції execute з посиланням на функцію add
+        console.log(execute(() => add(2, 3))); // Повинно вивести: 5
+
+    // Анонімна функція віднімання
+        const subtract = function(a, b) {
+        return a - b;
+    };
+
+    // Виклик функції execute з анонімною функцією віднімання
+        console.log(execute(() => subtract(5, 2))); // Повинно вивести: 3
+
+    // Стрілочна функція множення
+        const multiply = (a, b) => a * b;
+
+    // Виклик функції execute зі стрілочною функцією множення
+    console.log(execute(() => multiply(4, 6))); // Повинно вивести: 24
+    </script>
+</body>
+</html>
